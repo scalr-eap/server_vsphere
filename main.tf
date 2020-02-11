@@ -44,6 +44,6 @@ resource "vsphere_virtual_machine" "vm" {
   }
   
   clone {
-    template_uuid = "bbe0577d-2d0e-45ee-b04e-484c0038ee04"
+    template_uuid = "ubuntu16-base-scalr"
   }
 }
