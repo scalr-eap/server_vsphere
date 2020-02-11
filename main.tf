@@ -13,7 +13,7 @@ data "vsphere_datacenter" "dc" {
 
 data "vsphere_virtual_machine" "template" {
   name          = "ubuntu16-base-scalr"
-  datacenter_id = "${data.vsphere_datacenter.datacenter.id}"
+  datacenter_id = "${data.vsphere_datacenter.dc.id}"
 }
 
 data "vsphere_datastore" "datastore" {
