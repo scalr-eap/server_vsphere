@@ -8,7 +8,7 @@ provider "vsphere" {
 }
 
 data "vsphere_datacenter" "dc" {
-  name = "datacenter"
+  name = "Datacenter"
 }
 
 data "vsphere_datastore" "datastore" {
