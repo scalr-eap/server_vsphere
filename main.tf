@@ -33,7 +33,6 @@ resource "vsphere_virtual_machine" "vm" {
 
   num_cpus = 2
   memory   = 1024
-  guest_id = "ubuntu-base"
 
   network_interface {
     network_id = data.vsphere_network.network.id
@@ -44,3 +43,7 @@ resource "vsphere_virtual_machine" "vm" {
     size  = 20
   }
 }
+
+clone {
+    template_uuid = "vm-38"
+  }
