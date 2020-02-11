@@ -11,6 +11,11 @@ data "vsphere_datacenter" "dc" {
   name = "Datacenter"
 }
 
+data "vsphere_virtual_machine" "template" {
+  name          = "ubuntu16-base-scalr"
+  datacenter_id = "${data.vsphere_datacenter.datacenter.id}"
+}
+
 data "vsphere_datastore" "datastore" {
   name          = "datastore1"
   datacenter_id = data.vsphere_datacenter.dc.id
@@ -44,6 +49,6 @@ resource "vsphere_virtual_machine" "vm" {
   }
   
   clone {
-    template_uuid = "ubuntu16-base-scalr"
+    template_uuid = data.vsphere_virtual_machine.template.id
   }
 }
