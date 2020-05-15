@@ -11,3 +11,11 @@ variable "vsphere_server" {
 variable "vsphere_user" {
   global_variable = "v_user"
 }
+
+variable "cpu" {
+  global_variable = "v_cpu"
+}
+
+variable "mem" {
+  global_variable = "v_mem"
+}
