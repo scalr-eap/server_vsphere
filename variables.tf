@@ -1,6 +1,7 @@
 variable "vsphere_user" {}
 variable "vsphere_password" {}
 variable "vsphere_server" {}
+variable "vm_name" {}
 variable "cpu" {}
 variable "mem" {}
 variable "disk_size" {
