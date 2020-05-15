@@ -36,9 +36,9 @@ resource "vsphere_virtual_machine" "vm" {
   resource_pool_id = data.vsphere_resource_pool.pool.id
   datastore_id     = data.vsphere_datastore.datastore.id
 
-  num_cpus = 2
-  memory   = 1024
-  guest_id = "ubuntu64Guest"
+  num_cpus = var.cpu
+  memory   = var.mem
+  guest_id = var.os
   
   network_interface {
     network_id = data.vsphere_network.network.id
@@ -46,7 +46,7 @@ resource "vsphere_virtual_machine" "vm" {
 
   disk {
     label = "disk0"
-    size  = 20
+    size  = var.disk_size
   }
   
   clone {
